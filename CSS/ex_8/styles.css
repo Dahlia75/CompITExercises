@@ -1,0 +1,29 @@
+/*Box Model*/
+
+* {
+    border: 1px solid;
+}
+html {
+    border-color:  purple;
+}
+body {
+    border-color: red;
+}
+div {
+    border-color: blue;
+}
+p {
+    border-width: 2px;
+    border-color: green;
+}
+span {
+    border: 3px brown dotted;
+}
+a {
+    border: 2px coral dashed;
+}
+.radius {
+    border-width: 2px;
+    border-color: orange;
+    border-radius: 20px;
+}

@@ -1,0 +1,19 @@
+/* Visibility */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+article {
+    border: 1px solid gray;
+}
+article.hidden {
+    background-color: #ddd;
+}
+article.remove {
+    background-color: #999;
+}
+.hidden > h1 {
+    visibility: hidden;
+}
+.remove > h1 {
+    display: none;
+}

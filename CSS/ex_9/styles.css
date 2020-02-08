@@ -1,0 +1,33 @@
+/* padding and Margin  */
+
+body {
+    border: black 1px solid;
+    margin: 0;
+    padding: 0;
+}
+div {
+    border: red 1px solid;
+    padding: 10px;
+    margin: 10px;
+}
+span {
+    border: orange 1px solid;
+    padding: 10px;
+    margin: 10px;
+}
+.box {
+    width: 300px;
+    height: 100px;
+}
+.min{
+    min-width: 100px;
+    min-height: 10px;
+}
+.max {
+    max-width: 200px;
+    max-height: 40px;
+}
+.center {
+    width: 300px;
+    margin: auto;
+}
