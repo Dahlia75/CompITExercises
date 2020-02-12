@@ -32,3 +32,20 @@ function sortNumOrder(number1, number2, number3, highToLow) {
 
 sortNumOrder(10, 8, '25', true);
 sortNumOrder(10, 8, 25, false);
+
+function sortNumOrder(number1, number2, number3) {
+    let temparr = [number1, number2, number3];
+    let temp = 0;
+    for (let i = 0 ;i<(temparr.length-1); i++) {
+        for (let j = i+1; j < temparr.length; j++){
+            if(temparr[i]>temparr[j]){
+                temp = temparr[i];
+                temparr[i] = temparr[j];
+                temparr[j] = temp;
+            }
+        }
+    }
+    console.log(temparr);
+}
+
+sortNumOrder(10, 12, 9);
