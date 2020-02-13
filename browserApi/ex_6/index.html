@@ -1,0 +1,26 @@
+<!-- CCreate a script tag on the document head element
+Using the confirm method show the user the following method:
+Would you like the author of this document?
+If the user confirms the question then we show him the following message
+The author is %firstname% %lastname%%
+Else we show the following message:
+So, So, SOOO, sad.. the author is crying now... thanks -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Learning browser api</title>
+        <script>
+            let replyConf = confirm('Would you like the author of this document?');
+            if(replyConf){
+                alert(`The author is somone :)`);
+            } else {
+                alert(`So, So, SOOO, sad.. the author is crying now... thanks`);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Congrats</h1>
+        <p>You are running exercise 5 :)</p>
+    </body>
+</html>
