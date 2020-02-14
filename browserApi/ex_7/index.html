@@ -1,0 +1,28 @@
+<!-- Show the user the following message using the alert method:
+This program adds all the numbers you input
+While the user confirms that he wants to input another number execute the following acctions
+Using the prompt method ask the user to input a number
+Add the number
+Show the partial result with the following message:
+The result so far is: %result% -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Learning browser api</title>
+        <script>
+            alert('This program adds all the numbers you input');
+            let numSum = 0;
+            do{
+                alert(`The result so far is: ${numSum}`);
+                num = prompt('If you want to continue with adding another number, please input a number.');
+                numSum += parseInt(num);
+
+            } while(num != null);
+        </script>
+    </head>
+    <body>
+        <h1>Congrats</h1>
+        <p>You are running exercise 5 :)</p>
+    </body>
+</html>
