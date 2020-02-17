@@ -1,0 +1,31 @@
+<!-- Ask the user to input the number of seconds that he would like to stay in our site
+Show how many seconds left he has using console.log()
+Once the session is over show the following message:
+Your session has expired, come again soon! -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Learning browser api</title>
+        <script>
+            let count = 0;
+            let secCount = prompt('How many seconds you would like to stay in the websit?');
+            let remainingSec = parseInt(secCount);
+            const id = setInterval(function() {
+                remainingSec = secCount - count;
+                console.log('You stil have %s seconds on this site', remainingSec); 
+                count++;               
+            }, 1000); 
+                
+            if (remainingSec == 0) {
+                clearInterval(id);
+                console.log(typeof(remainingSec));
+                alert('Your session has expired, come again soon!')
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Congrats</h1>
+        <p>You are running exercise 12 :)</p>
+    </body>
+</html>

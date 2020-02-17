@@ -1,0 +1,32 @@
+<!-- Now we need to keep track of how many numbers the user input
+Once the user doesn't want to add any more numbers show the following message:
+The final result is: %result%
+The user input %numbers% numbers
+The average is: %average% -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Learning browser api</title>
+        <script>
+            alert('This program will calculate the avarage for all the numbers you input');
+            let numSum = 0;
+            let count = 0;
+            let numAvg = 0;
+            do{
+                num = prompt('If you want to continue with entering another number, please input a number.');
+                if (num != null) {
+                    numSum += parseInt(num); 
+                    numAvg = numSum/count;
+                    count++;
+                } else {
+                    alert(`The user input ${count} numbers\nThe Avarage is: ${numAvg}`);
+                }
+            } while(num != null);
+        </script>
+    </head>
+    <body>
+        <h1>Congrats</h1>
+        <p>You are running exercise 8 :)</p>
+    </body>
+</html>

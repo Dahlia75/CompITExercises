@@ -1,0 +1,18 @@
+<!-- Create a script tag on the document head element
+Ask the user to input a complete URL
+Redirect the user to the new location -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Learning browser api</title>
+        <script>
+            let urlRef = "http://";
+            urlRef += prompt('Please enter the full URL.');
+            location.href = urlRef;
+        </script>
+    </head>
+    <body>
+        <h1>Congrats</h1>
+        <p>You are running exercise 9 :)</p>
+    </body>
+</html>

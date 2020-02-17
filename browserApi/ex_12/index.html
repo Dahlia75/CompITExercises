@@ -1,0 +1,19 @@
+<!-- Add a timer to show the user how many seconds has passed sinse he opened the site (every second)
+Use console.log() to show the seconds -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Learning browser api</title>
+        <script>
+            let secCount = 0;
+            const id = setInterval(function() {
+                console.log(`You spend ${secCount} seconds on this site`); 
+                secCount++;               
+            }, 1000); 
+        </script>
+    </head>
+    <body>
+        <h1>Congrats</h1>
+        <p>You are running exercise 12 :)</p>
+    </body>
+</html>
