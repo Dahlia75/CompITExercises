@@ -17,5 +17,5 @@ const incrementedNumbers = numbers.map((num)=> {
 });
 
 incrementedNumbers.forEach((number, index)=> {
-    console.log("index: %s, original number: , incremented value: %s", index, number);
+    console.log("index: %s, original number: %s, incremented value: %s", index, (number-10), number);
 });
