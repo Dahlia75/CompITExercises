@@ -17,7 +17,7 @@ Your session has expired, come again soon! -->
                 count++;               
             }, 1000); 
                 
-            if (remainingSec == 0) {
+            if (remainingSec === 0) {
                 clearInterval(id);
                 console.log(typeof(remainingSec));
                 alert('Your session has expired, come again soon!')
