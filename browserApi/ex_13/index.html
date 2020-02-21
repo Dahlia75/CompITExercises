@@ -8,24 +8,25 @@ Your session has expired, come again soon! -->
     <head>
         <title>Learning browser api</title>
         <script>
-            let count = 0;
+            let count = 1;
             let secCount = prompt('How many seconds you would like to stay in the websit?');
             let remainingSec = parseInt(secCount);
-            const id = setInterval(function() {
-                remainingSec = secCount - count;
+            const id = setInterval(() => {
                 console.log('You stil have %s seconds on this site', remainingSec); 
-                count++;               
-            }, 1000); 
-                
-            if (remainingSec === 0) {
-                clearInterval(id);
-                console.log(typeof(remainingSec));
-                alert('Your session has expired, come again soon!')
+                remainingSec = secCount - count;
+                count++; 
+                checkForStop()           
+            }, 1000);
+            function checkForStop(){
+                if (remainingSec == 0) {
+                    clearInterval(id);
+                    alert('Your session has expired, come again soon!')
+                }   
             }
         </script>
     </head>
     <body>
         <h1>Congrats</h1>
-        <p>You are running exercise 12 :)</p>
+        <p>You are running exercise 13 :)</p>
     </body>
 </html>
