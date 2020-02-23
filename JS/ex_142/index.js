@@ -28,4 +28,5 @@ console.log('firstPerson', firstString);
 console.log('secondPerson', secondString);
 console.log('thirdPerson', thirdString);
 
-console.log('The first and second person are similar. ', (firstString == secondPerson));console.log('The first and third person are similar. ', (firstString == thirdString));
+console.log('The first and second person are similar. ', (firstString == secondPerson));
+console.log('The first and third person are similar. ', (firstString == thirdString));
