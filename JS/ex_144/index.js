@@ -15,5 +15,5 @@ const user = {
     password: 'Alfred1960ROCKS!'
 };
 const capitalizedUsername = user.username.charAt(0).toUpperCase() + user.username.substring(1);
-const replacedPassword = user.password;
+const replacedPassword = user.password.replace("1960", " ");
 console.log('user name: %s\nPassword: %s', capitalizedUsername, replacedPassword);
