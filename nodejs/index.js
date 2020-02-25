@@ -16,9 +16,6 @@
  
 // app.listen(3000)
 
-const express = require('express')
-console.log(express)
-
-// const calc = require('./calculater')
-// let rsult = calc.sum(2, 3)
-// console.log(`Thee result is: ${rsult}`);
+const calc = require('./calculater')
+let rsult = calc.sum(2, 3)
+console.log(`Thee result is: ${rsult}`);
