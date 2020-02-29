@@ -23,7 +23,7 @@ const user = {
     username: '',
     password: '',
     greet: function(){
-        if (this.username != ""){
+        if (this.username != ''){
                 return console.log("Hello, I'm user %s", this.username);
         } else {
                 return console.log("Please assign a username value");
