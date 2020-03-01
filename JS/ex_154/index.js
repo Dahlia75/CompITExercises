@@ -34,26 +34,56 @@
 // The %player name% has %energy% energy % and  %lifes% lifes
 var player = {
     name: null,
-    energy: 10,
+    energy: 100,
     lives: 3,
     loseEnergy: function (damage){
-        if(energy <= 0){
-            loseLife();
+        if(this.energy > 0 && (this.energy -= damage) > 0){
+            //this.energy -= damage;
+            console.log(`You have ${player.energy} energy and ${player.lives} life/lifes`);
         } else {
-            energy -= damage;
+            this.energy = 0;
+            this.loseLife();
+            console.log('No more energy to lose, you lose one life');
         }
     },
     recoverEnergy: function (energyUp){
-        if (energy < 101) {
-            energy += energyUp;
+        if (this.energy < 101 && (this.energy += energyUp) < 101) {
+            console.log(`You have ${player.energy} energy`);
+        } else {
+            this.energy = 100;
+            console.log(`You have full energy so you can't add more energy`);
         }
     },
     loseLife: function (){
-        lives--;
+        if (this.lives > 0 && (this.lives -= 1) > 0){
+            console.log(`You have ${player.energy} energy and ${player.lives} life/lifes`);
+        } else {
+            console.log("You don't have more lives \n/----------Game Over---------/");
+        }
     },
     recoverLife: function (){
-        if(lives < 100){
-            lives++;
+        if(this.lives < 3 && (this.lives +=1) < 4){
+            console.log(`You have ${player.lives} life/lifes`);
+        } else {
+            //this.lives = 3;
+            console.log(`You have full lifes so you can't add more life`, this.lives);
         }
     }
 }
+
+player.name = "Abdu";
+player.loseLife();
+player.loseEnergy(10);
+player.loseEnergy(5);
+player.loseEnergy(15);
+player.loseEnergy(20);
+player.recoverEnergy(10);
+player.loseEnergy(30);
+player.loseEnergy(40);
+player.loseLife();
+player.recoverLife();
+player.recoverLife();
+player.recoverLife();
+player.recoverLife();
+
+console.log(`The ${player.name} has ${player.energy} energy and ${player.lives} life/lifes`);
