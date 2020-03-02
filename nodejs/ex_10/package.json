@@ -1,0 +1,16 @@
+{
+  "name": "ex_10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "logplease": "^1.2.15",
+    "one-liner-joke": "^1.2.0"
+  }
+}
