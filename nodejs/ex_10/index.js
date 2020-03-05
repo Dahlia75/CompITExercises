@@ -25,9 +25,9 @@ app.get('/', (req, res) => {
 
 app.get('/jokes', (req, res) => {
     var getRandomJoke = oneLinerJoke.getRandomJoke();
-    //var getRandomJoke2 = oneLinerJoke.getRandomJoke();
-
-    res.send(getRandomJoke.body);  
+    var getRandomJoke2 = oneLinerJoke.getRandomJoke();
+    let html = `<ul><li>Joke1 ${getRandomJoke.body}</li><li> Joke 2 ${getRandomJoke2.body}</li></ul>`;
+    res.send(html);  
 });
 
 app.get('/joke', (req, res) => {
