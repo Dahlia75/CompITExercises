@@ -1,0 +1,26 @@
+extends ./layout.pug
+include product-mixin
+
+block scripts
+  script.
+    alert('alert from a block');
+
+block content
+  h1= message
+  div.container
+    p Starting using Pug!
+  p
+    | text as content using  pipe and indentation
+  p.
+    text as content using a dot and indentation
+  p text as content
+  a.foo_link(href='about.html', target='_blank') About Us
+  div#main main content
+  div.red text in red
+  section  
+    +product({title: 'PS4 Pro', description: 'Best console ever, so far..' })
+  section
+    +product({title: 'XBOX', description: 'Other great console' })
+
+block foot
+  div This footer content comes from a block

@@ -14,7 +14,8 @@
     "express": "^4.17.1",
     "lodash": "^4.17.15",
     "logplease": "^1.2.15",
-    "one-liner-joke": "^1.2.0"
+    "one-liner-joke": "^1.2.0",
+    "pug": "^2.0.4"
   },
   "devDependencies": {
     "uglify-js": "^3.8.0"
