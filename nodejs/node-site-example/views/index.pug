@@ -1,6 +1,12 @@
-doctype html
-head
-  title Simple site using Node.js, Express and Pug
-body
+extends ./layout.pug
+
+block content
   h1 Welcome to Node.js, Express and Pug
   p This project is just to practice
+  include ./create.pug
+  
+  each superheroe in superheroes
+    div.superheroe-container
+      a(href="/superheroes/" + superheroe.id)
+        img.img-diamentions(src='/img/superheroes/' + superheroe.image)
+        h3= superheroe.name
