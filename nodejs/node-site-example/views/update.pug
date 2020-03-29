@@ -1,0 +1,13 @@
+extends ./layout.pug
+
+block content
+  h1 Update View
+  div.create-container
+    form(action="/update/" + superheroe._id  method="post" enctype="multipart/form-data")
+      input(type="file" placeholder="superhero picture" name="file")
+      input(type="text" value=superheroe.name placeholder="superhero name" required="required" name="superhero")
+      button Update
+    
+    div(style="width: 18rem;")
+      img(src='/img/superheroes/' + superheroe.image alt="superheroe.image")
+      h5=superheroe.name
