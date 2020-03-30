@@ -1,0 +1,16 @@
+extends ./layout.pug
+
+block content
+  h1 Welcome to Node.js, Express and Pug
+  p This project is just to practice
+  include ./create.pug
+  
+  each superheroe in superheroes
+    div.superheroe-container
+      a(href="/superheroes/" + superheroe._id)
+        img.img-diamentions(src='/img/superheroes/' + superheroe.image alt=superheroe.image)
+        h3= superheroe.name
+        a(href="/delete/" + superheroe._id)
+          button Delete   
+        a(href="/update/" + superheroe._id)
+          button Update 
