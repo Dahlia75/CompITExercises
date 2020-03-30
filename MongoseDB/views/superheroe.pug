@@ -3,3 +3,10 @@ extends ./layout.pug
 block content
     img(src='/img/superheroes/' + superheroe.image)
     h3= superheroe.name
+    br
+
+block bottomNavigation
+  a(href="/" class="btn btn-link") Go back
+
+block footer
+  div(style="background-color: red")=superheroe.name

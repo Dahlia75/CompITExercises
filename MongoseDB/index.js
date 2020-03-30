@@ -44,62 +44,28 @@ app.set('view engine', 'pug');
 app.use(express.static('public'));
 
 //Get Home page - Entry point
-app.get('/', (req, res) => {
-  MongoClient.connect(url, function(err, client) {
-    const db = client.db('comics');
-    const collection = db.collection('superheroes');
-  
-    collection.find({}).toArray((error, documents) => {
-      // console.log(documents);
-      client.close();
-      res.render('index', { superheroes: documents });
-    });
-  });
+app.get('/', async(req, res) => {
+  const documents = await Superheroe.find().exec();
+  const indexVariables = {
+      pageTitle: "First page of our app",
+      superheroes: documents
+  };
+
+  res.render('index', { variables: indexVariables });
 });
 
 //Get Superheroe details page
-app.get('/superheroes/:id', (req, res) => {
-  
-  // let selectedSuperheroe = superheroes.filter(superheroe => {
-    //   return superheroe.id === +selectedId;
-    // });
-    
-    // selectedSuperheroe = selectedSuperheroe[0];
-    
-    // res.render('superheroe', { superheroe: selectedSuperheroe });
-    
-  MongoClient.connect(url, function(err, client) {
-    const db = client.db('comics');
-    const collection = db.collection('superheroes');
-    const selectedId = req.params.id;
-    //console.log("selectedId: ", req.params.id, selectedId);
-      
-    // collection.find({}).toArray((error, documents) => {
-        
-    //   let selectedSuperhero = documents.filter(superhero => {
-    //     console.log("superhero._id: ", superhero._id);
-    //     return superhero._id == selectedId;
-    //   });
-    //   client.close();
-    //   console.log("Documents: ", selectedSuperhero);
-    //   res.render('superheroe', { superheroe: selectedSuperhero[0] });
-    // });
-    collection.find({"_id": ObjectID(selectedId)}).toArray((error, documents) => {
-      client.close();
-      console.log("=======", documents);
-      res.render('superheroe', { superheroe: documents[0] });
-		});
-  });
+app.get('/superheroes/:id', async(req, res) => {
+  const selectedId = req.params.id;
+  const document = await Superheroe.findById(selectedId).exec();
+
+  res.render('superheroe', { superheroe: document });
 });
 
-//Before using multer for loading files
-// app.post('/superheros', urlencodedParser, (req, res) => {
-//   const newId = superheroes[superheroes.length - 1].id + 1;
-//   const newSuperhero = {
-//     id: newId,
-//     name: req.body.superhero.toUpperCase(),
-//     image: 'ant-man_marvel_silo.png'
-//   }
+//Create Superhero
+app.get('/create', (req, res) => {
+  res.render('create');
+});
 
 //Update Superhero
 app.get('/update/:id', (req, res) => {
@@ -139,9 +105,7 @@ app.get('/delete/:id', (req, res) => {
 
 //Create new Superheroe
 app.post('/superheros', upload.single('file'), (req, res) => {
-  //const newId = superheroes[superheroes.length - 1].id + 1;
   const newSuperhero = {
-    //id: newId,
     name: req.body.superhero.toUpperCase(),
     image: req.file.filename
   }
@@ -150,19 +114,6 @@ app.post('/superheros', upload.single('file'), (req, res) => {
   const superheroe = new Superheroe(newSuperhero);
   superheroe.save();
   res.redirect('/');
-
-  //Replace push with mongoDB
-  //superheroes.push(newSuperhero);
-
-  // MongoClient.connect(url, function(err, client) {
-  //   const db = client.db('comics');
-  //   const collection = db.collection('superheroes');
-    
-  //   collection.insertOne(newSuperhero)
-    
-  //   client.close();
-  //   res.redirect('/');
-  // });
 });
 
 //Save the Update Superhero

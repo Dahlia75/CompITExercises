@@ -1,16 +1,22 @@
 extends ./layout.pug
 
 block content
-  h1 Welcome to Node.js, Express and Pug
-  p This project is just to practice
-  include ./create.pug
-  
-  each superheroe in superheroes
+  h1 Welcome to Node.js, Express, Pug and Mongoose
+  p 
+    h4 This project is just to practice
+    br
+  a(href="/create") 
+    button 
+      h1 Create
+  br  
+  each superheroe in variables.superheroes
     div.superheroe-container
       a(href="/superheroes/" + superheroe._id)
         img.img-diamentions(src='/img/superheroes/' + superheroe.image alt=superheroe.image)
         h3= superheroe.name
         a(href="/delete/" + superheroe._id)
-          button Delete   
+          button 
+            h2 Delete   
         a(href="/update/" + superheroe._id)
-          button Update 
+          button 
+            h2 Update 

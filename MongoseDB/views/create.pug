@@ -1,5 +1,14 @@
-div.create-container
-  form(action="/superheros",  method="post" enctype="multipart/form-data")
-    input(type="file", placeholder="superhero picture", name="file")
-    input(type="text", placeholder="superhero name", required="required", name="superhero")
-    button Create
+extends ./layout.pug
+
+block content
+  div.create-container
+    p This is a form that you can use to create a new superhero
+    br
+    form(action="/superheros",  method="post" enctype="multipart/form-data")
+      input(type="file", placeholder="superhero picture", name="file")
+      input(type="text", placeholder="superhero name", required="required", name="superhero")
+      button Create
+  br
+
+block bottomNavigation
+  a(href="/" class="btn btn-link") Go back
